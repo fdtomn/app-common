@@ -19,8 +19,11 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
-	public String login(User user){
+	public String login(User user, HttpServletRequest request){
 		
+		if(getUser(request) == null){
+			request.getSession().setAttribute("user", user);
+		}
 		//user = userServiceImpl.getUser(user);
 		System.out.println("id: "+user.getId());
 		return "index";
