@@ -13,8 +13,9 @@
 
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<!-- <mvc:mapping path="/" /> -->
 			<mvc:mapping path="/**" />
+			<!-- js及css库 -->
+			<mvc:exclude-mapping path="/lib/**" />
 			<mvc:exclude-mapping path="/account/login" />
 			<bean class="com.nyx.maven.base.interceptor.LoginInterceptor"></bean>
 		</mvc:interceptor>
