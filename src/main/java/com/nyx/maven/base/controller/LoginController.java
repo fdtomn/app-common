@@ -81,4 +81,29 @@ public class LoginController {
 	public static User getUser(HttpServletRequest request) {
 		return (User)request.getSession().getAttribute("user");
 	}
+	
+	/**
+	 * 跳转到重置密码页面
+	 * @return
+	 */
+	@RequestMapping(value="/forgotPassword", method=RequestMethod.GET)
+	public String goRestPassword(){
+		
+		return "login/forgot-password";
+	}
+	
+	/**
+	 * 发送邮件
+	 * @return
+	 */
+	@RequestMapping(value="/sendMail", method=RequestMethod.POST)
+	public String sendMail(){
+		//需要接收用户信息 及 邮箱
+		
+		
+		return "login/forgot-password";
+	}
+	
+	
+	
 }
